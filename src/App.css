@@ -6,3 +6,16 @@ input, label,button{
     margin-left: 3px;
 }
 
+table,th,td{
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 5px;
+    width: 150px;
+}
+
+table{
+    margin-left: 5px;
+}
