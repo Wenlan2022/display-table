@@ -19,7 +19,7 @@ function App() {
       <Input getData={getData}/>
       <br/>
 
-      <Display input = {data}/>
+      <Display input = {data} setData= {setData}/>
     </div>
   );
 }
