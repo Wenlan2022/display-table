@@ -6,16 +6,17 @@ export default function Input(props) {
     const [last, setLast] = useState("")
     const [age, setAge] = useState()
 
+    const [filter, setFilter] = useState("")
     function submitData(e){
         e.preventDefault()
         props.getData({firstname:first, lastname:last, age:age})
         
     }
 
+    function filterData(){
+      props.filter(filter)
+    }
 
-    // console.log(first)
-    // console.log(last)
-    // console.log(age)
 
   return (
     <div>
@@ -35,6 +36,11 @@ export default function Input(props) {
         
         <button type='submit'>Sumbit</button>
         </form>
+
+        <br />
+        <label >Search:</label>
+        <input type="text" onChange={e=>setFilter(e.target.value)}/>
+        <button onClick={filterData}>Filter</button>
     </div>
   )
 }

@@ -8,15 +8,22 @@ function App() {
   const [data, setData] = useState([])
 
  function getData(inputData){
-  //  console.log("hello")
   setData([...data,inputData])
  }
   
-  // console.log(data)
+
+  function filter(keyword){
+    if(keyword !== ""){
+    let tep = data.filter(item => item.firstname === keyword)
+    setData([...tep])}
+    else{
+      setData([...data])
+    }
+  }
 
   return (
     <div className="App">
-      <Input getData={getData}/>
+      <Input getData={getData} filter = {filter}/>
       <br/>
 
       <Display input = {data} setData= {setData}/>
